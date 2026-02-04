@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Entry Registration | IPS Academy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="registration-card">
+            <div class="header">
+                <div class="logo">🎓</div>
+                <h1>Campus Entry Registration</h1>
+                <p>IPS Academy - Visitor Access System</p>
+            </div>
+
+            <form id="entryForm" class="form">
+                <div class="form-group" id="nameGroup">
+                    <label for="name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                    <span class="error">Please enter your name</span>
+                </div>
+
+                <div class="form-group" id="phoneGroup">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" placeholder="10-digit mobile number" maxlength="10" required>
+                    <span class="error">Enter valid 10-digit number</span>
+                </div>
+
+                <div class="form-group" id="purposeGroup">
+                    <label for="purpose">Purpose of Visit <span class="required">*</span></label>
+                    <select id="purpose" required>
+                        <option value="">Select purpose</option>
+                        <option value="Admission Inquiry">Admission Inquiry</option>
+                        <option value="Meeting Faculty">Meeting Faculty</option>
+                        <option value="Campus Tour">Campus Tour</option>
+                        <option value="Exam/Interview">Exam / Interview</option>
+                        <option value="Official Work">Official Work</option>
+                        <option value="Personal Visit">Personal Visit</option>
+                    </select>
+                    <span class="error">Please select purpose</span>
+                </div>
+
+                <div class="consent">
+                    <input type="checkbox" id="consent" required>
+                    <label for="consent">I consent to share my information for campus security</label>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    <span id="btnText">Register & Enter Campus</span>
+                </button>
+                
+                <div id="errorMsg" class="form-error"></div>
+            </form>
+
+            <div class="footer">
+                <a href="#" class="admin-link"></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p>Registering...</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.0/dist/umd/supabase.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
